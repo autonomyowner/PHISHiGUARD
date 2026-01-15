@@ -1,0 +1,45 @@
+/* App-specific styles - most styles are in index.css */
+
+/* Responsive grid adjustments */
+@media (max-width: 1024px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 24px !important;
+  }
+
+  nav > div:last-child {
+    gap: 16px !important;
+  }
+
+  nav a {
+    display: none !important;
+  }
+
+  section {
+    padding: 80px 24px !important;
+  }
+
+  .demo-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Link hover effects */
+a:hover {
+  color: var(--accent-blue) !important;
+}
+
+/* Button link style */
+a.btn {
+  text-decoration: none;
+  display: inline-block;
+}
