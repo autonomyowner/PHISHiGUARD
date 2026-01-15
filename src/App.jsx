@@ -737,6 +737,7 @@ const MobileMenu = ({ isOpen, onClose, t, lang, setLang }) => (
         <a href="#features" onClick={onClose} style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '14px', padding: '8px 0' }}>{t.nav.features}</a>
         <a href="#demo" onClick={onClose} style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '14px', padding: '8px 0' }}>{t.nav.demo}</a>
         <a href="#architecture" onClick={onClose} style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '14px', padding: '8px 0' }}>{t.nav.architecture}</a>
+        <a href="#real-time" onClick={onClose} style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '14px', padding: '8px 0' }}>{t.nav.realTime}</a>
         <button
           onClick={() => { setLang(lang === 'en' ? 'ar' : 'en'); onClose(); }}
           className="btn btn-primary"
@@ -757,7 +758,8 @@ const translations = {
       howItWorks: 'How It Works',
       features: 'Features',
       demo: 'Demo',
-      architecture: 'Architecture'
+      architecture: 'Architecture',
+      realTime: 'Integration'
     },
     hero: {
       badge: 'CyberRally Hackathon 2026',
@@ -824,6 +826,28 @@ const translations = {
       title: 'System Architecture',
       subtitle: 'Built with FastAPI, PyTorch, and modern ML infrastructure'
     },
+    realTime: {
+      title: 'Real-Time Integration',
+      subtitle: 'How companies and email providers deploy PhishGuard in production',
+      useCase1Title: 'Email Gateway',
+      useCase1Desc: 'Deploy at the email gateway level. Every incoming email passes through PhishGuard API for instant scanning before delivery.',
+      useCase1Flow: 'Incoming Email → PhishGuard API → Deliver / Quarantine / Block',
+      useCase1Latency: '<500ms latency',
+      useCase2Title: 'Enterprise Email',
+      useCase2Desc: 'Integrate with Microsoft 365, Google Workspace, and other enterprise platforms via mail flow rules and security plugins.',
+      useCase2Features: ['Mail Flow Rules', 'Security Plugins', 'Quarantine Integration', 'Admin Dashboard'],
+      useCase3Title: 'Security Operations',
+      useCase3Desc: 'SOC teams use batch scanning for threat intelligence, incident response, and analyzing reported suspicious emails.',
+      useCase3Features: ['Batch Scanning', 'Threat Intelligence', 'Incident Response', 'Pattern Analysis'],
+      useCase4Title: 'API Integration',
+      useCase4Desc: 'Other security vendors integrate PhishGuard detection via REST API for real-time scoring in their own products.',
+      useCase4Code: 'POST /api/v1/detect → { "risk_score": 0.92 }',
+      flowTitle: 'Real-World Detection Flow',
+      flowStep1: 'Employee receives email from "paypa1.com"',
+      flowStep2: 'Email gateway sends to PhishGuard API',
+      flowStep3: 'AI detects: Cyrillic homoglyphs, urgency language, suspicious URL',
+      flowStep4: 'Risk Score: 0.92 (HIGH) → Email quarantined'
+    },
     footer: {
       byline: 'CyberRally Hackathon 2026 | By Zellag',
       contact: 'Contact us:',
@@ -835,7 +859,8 @@ const translations = {
       howItWorks: 'كيف يعمل',
       features: 'المميزات',
       demo: 'تجربة',
-      architecture: 'البنية'
+      architecture: 'البنية',
+      realTime: 'التكامل'
     },
     hero: {
       badge: 'هاكاثون سايبر رالي 2026',
@@ -901,6 +926,28 @@ const translations = {
     architecture: {
       title: 'بنية النظام',
       subtitle: 'مبني بـ FastAPI و PyTorch وبنية تحتية حديثة للتعلم الآلي'
+    },
+    realTime: {
+      title: 'التكامل في الوقت الفعلي',
+      subtitle: 'كيف تنشر الشركات ومزودو البريد الإلكتروني PhishGuard في الإنتاج',
+      useCase1Title: 'بوابة البريد',
+      useCase1Desc: 'النشر على مستوى بوابة البريد. كل بريد وارد يمر عبر واجهة PhishGuard للفحص الفوري قبل التسليم.',
+      useCase1Flow: 'بريد وارد ← واجهة PhishGuard ← تسليم / عزل / حظر',
+      useCase1Latency: 'زمن استجابة <500مللي ثانية',
+      useCase2Title: 'البريد المؤسسي',
+      useCase2Desc: 'التكامل مع Microsoft 365 و Google Workspace ومنصات المؤسسات الأخرى عبر قواعد تدفق البريد وملحقات الأمان.',
+      useCase2Features: ['قواعد تدفق البريد', 'ملحقات الأمان', 'تكامل العزل', 'لوحة المشرف'],
+      useCase3Title: 'عمليات الأمان',
+      useCase3Desc: 'تستخدم فرق SOC الفحص الدفعي لاستخبارات التهديدات والاستجابة للحوادث وتحليل رسائل البريد المشبوهة.',
+      useCase3Features: ['الفحص الدفعي', 'استخبارات التهديدات', 'الاستجابة للحوادث', 'تحليل الأنماط'],
+      useCase4Title: 'تكامل الواجهة',
+      useCase4Desc: 'يدمج موردو الأمان الآخرون كشف PhishGuard عبر REST API للتقييم في الوقت الفعلي في منتجاتهم.',
+      useCase4Code: 'POST /api/v1/detect → { "risk_score": 0.92 }',
+      flowTitle: 'تدفق الكشف في العالم الحقيقي',
+      flowStep1: 'الموظف يستلم بريد من "paypa1.com"',
+      flowStep2: 'بوابة البريد ترسل إلى واجهة PhishGuard',
+      flowStep3: 'الذكاء الاصطناعي يكشف: حروف سيريلية، لغة عاجلة، رابط مشبوه',
+      flowStep4: 'درجة الخطر: 0.92 (عالي) ← البريد معزول'
     },
     footer: {
       byline: 'هاكاثون سايبر رالي 2026 | فريق Zellag',
@@ -990,6 +1037,7 @@ function App() {
             <a href="#features" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '14px', transition: 'color 0.3s' }}>{t.nav.features}</a>
             <a href="#demo" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '14px', transition: 'color 0.3s' }}>{t.nav.demo}</a>
             <a href="#architecture" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '14px', transition: 'color 0.3s' }}>{t.nav.architecture}</a>
+            <a href="#real-time" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '14px', transition: 'color 0.3s' }}>{t.nav.realTime}</a>
             {/* Language Toggle */}
             <button
               onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
@@ -1657,6 +1705,387 @@ function App() {
                 {tech}
               </div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Real-Time Integration Section */}
+      <section id="real-time" style={{
+        padding: isMobile ? '60px 16px' : '120px 48px',
+        position: 'relative',
+        zIndex: 1,
+        background: 'rgba(0, 212, 255, 0.02)'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            style={{ textAlign: 'center', marginBottom: isMobile ? '32px' : '64px' }}
+          >
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: isMobile ? '1.75rem' : '3rem',
+              fontWeight: 700,
+              marginBottom: '12px'
+            }}>
+              {t.realTime.title}
+            </h2>
+            <p style={{
+              color: 'var(--text-secondary)',
+              maxWidth: '600px',
+              margin: '0 auto',
+              fontSize: isMobile ? '13px' : '16px',
+              padding: isMobile ? '0 8px' : 0
+            }}>
+              {t.realTime.subtitle}
+            </p>
+          </motion.div>
+
+          {/* Use Cases Grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: isMobile ? '1fr' : isTablet ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
+            gap: isMobile ? '16px' : '20px',
+            marginBottom: isMobile ? '32px' : '48px'
+          }}>
+            {/* Email Gateway */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              style={{
+                background: 'var(--bg-secondary)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '8px',
+                padding: isMobile ? '20px' : '24px',
+                position: 'relative'
+              }}
+            >
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                right: isRTL ? 'auto' : 0,
+                left: isRTL ? 0 : 'auto',
+                padding: '4px 12px',
+                background: 'var(--accent-blue)',
+                color: 'var(--bg-primary)',
+                fontSize: '9px',
+                fontWeight: 600,
+                letterSpacing: '1px',
+                textTransform: 'uppercase',
+                borderRadius: isRTL ? '0 0 4px 0' : '0 0 0 4px'
+              }}>
+                {isRTL ? 'الأكثر شيوعاً' : 'MOST COMMON'}
+              </div>
+              <h3 style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: isMobile ? '1.1rem' : '1.25rem',
+                marginBottom: '12px',
+                marginTop: '16px',
+                color: 'var(--accent-blue)'
+              }}>
+                {t.realTime.useCase1Title}
+              </h3>
+              <p style={{
+                color: 'var(--text-secondary)',
+                fontSize: isMobile ? '12px' : '13px',
+                lineHeight: 1.6,
+                marginBottom: '16px'
+              }}>
+                {t.realTime.useCase1Desc}
+              </p>
+              <div style={{
+                background: 'var(--bg-tertiary)',
+                padding: '12px',
+                borderRadius: '4px',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '10px',
+                color: 'var(--accent-green)',
+                direction: 'ltr',
+                textAlign: 'center'
+              }}>
+                {t.realTime.useCase1Flow}
+              </div>
+              <div style={{
+                marginTop: '12px',
+                textAlign: 'center',
+                fontSize: '11px',
+                color: 'var(--accent-blue)',
+                fontWeight: 600
+              }}>
+                {t.realTime.useCase1Latency}
+              </div>
+            </motion.div>
+
+            {/* Enterprise Email */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              style={{
+                background: 'var(--bg-secondary)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '8px',
+                padding: isMobile ? '20px' : '24px'
+              }}
+            >
+              <h3 style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: isMobile ? '1.1rem' : '1.25rem',
+                marginBottom: '12px',
+                color: 'var(--accent-green)'
+              }}>
+                {t.realTime.useCase2Title}
+              </h3>
+              <p style={{
+                color: 'var(--text-secondary)',
+                fontSize: isMobile ? '12px' : '13px',
+                lineHeight: 1.6,
+                marginBottom: '16px'
+              }}>
+                {t.realTime.useCase2Desc}
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {t.realTime.useCase2Features.map((feature, i) => (
+                  <span key={i} style={{
+                    padding: '4px 8px',
+                    background: 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '4px',
+                    fontSize: '10px',
+                    color: 'var(--text-secondary)'
+                  }}>
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Security Operations */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              style={{
+                background: 'var(--bg-secondary)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '8px',
+                padding: isMobile ? '20px' : '24px'
+              }}
+            >
+              <h3 style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: isMobile ? '1.1rem' : '1.25rem',
+                marginBottom: '12px',
+                color: '#ffa502'
+              }}>
+                {t.realTime.useCase3Title}
+              </h3>
+              <p style={{
+                color: 'var(--text-secondary)',
+                fontSize: isMobile ? '12px' : '13px',
+                lineHeight: 1.6,
+                marginBottom: '16px'
+              }}>
+                {t.realTime.useCase3Desc}
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {t.realTime.useCase3Features.map((feature, i) => (
+                  <span key={i} style={{
+                    padding: '4px 8px',
+                    background: 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '4px',
+                    fontSize: '10px',
+                    color: 'var(--text-secondary)'
+                  }}>
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* API Integration */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              style={{
+                background: 'var(--bg-secondary)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '8px',
+                padding: isMobile ? '20px' : '24px'
+              }}
+            >
+              <h3 style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: isMobile ? '1.1rem' : '1.25rem',
+                marginBottom: '12px',
+                color: 'var(--accent-red)'
+              }}>
+                {t.realTime.useCase4Title}
+              </h3>
+              <p style={{
+                color: 'var(--text-secondary)',
+                fontSize: isMobile ? '12px' : '13px',
+                lineHeight: 1.6,
+                marginBottom: '16px'
+              }}>
+                {t.realTime.useCase4Desc}
+              </p>
+              <div style={{
+                background: 'var(--bg-tertiary)',
+                padding: '12px',
+                borderRadius: '4px',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '10px',
+                color: 'var(--accent-green)',
+                direction: 'ltr'
+              }}>
+                {t.realTime.useCase4Code}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Real-World Flow Diagram */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="terminal-box"
+          >
+            <div className="terminal-header">
+              <span className="terminal-dot" />
+              <span className="terminal-dot" />
+              <span className="terminal-dot" />
+              <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--text-muted)' }}>detection_flow.log</span>
+            </div>
+            <div className="terminal-content">
+              <h4 style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: isMobile ? '1rem' : '1.25rem',
+                marginBottom: '20px',
+                textAlign: 'center',
+                color: 'var(--accent-blue)'
+              }}>
+                {t.realTime.flowTitle}
+              </h4>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
+                gap: isMobile ? '12px' : '16px'
+              }}>
+                {/* Step 1 */}
+                <div style={{
+                  padding: '16px',
+                  background: 'rgba(255, 62, 62, 0.1)',
+                  border: '1px solid rgba(255, 62, 62, 0.3)',
+                  borderRadius: '6px',
+                  textAlign: 'center'
+                }}>
+                  <div style={{
+                    width: '32px',
+                    height: '32px',
+                    background: 'var(--accent-red)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 12px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    color: 'var(--bg-primary)'
+                  }}>1</div>
+                  <p style={{ fontSize: '12px', color: 'var(--text-secondary)', margin: 0 }}>
+                    {t.realTime.flowStep1}
+                  </p>
+                </div>
+
+                {/* Step 2 */}
+                <div style={{
+                  padding: '16px',
+                  background: 'rgba(255, 165, 2, 0.1)',
+                  border: '1px solid rgba(255, 165, 2, 0.3)',
+                  borderRadius: '6px',
+                  textAlign: 'center'
+                }}>
+                  <div style={{
+                    width: '32px',
+                    height: '32px',
+                    background: '#ffa502',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 12px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    color: 'var(--bg-primary)'
+                  }}>2</div>
+                  <p style={{ fontSize: '12px', color: 'var(--text-secondary)', margin: 0 }}>
+                    {t.realTime.flowStep2}
+                  </p>
+                </div>
+
+                {/* Step 3 */}
+                <div style={{
+                  padding: '16px',
+                  background: 'rgba(0, 212, 255, 0.1)',
+                  border: '1px solid rgba(0, 212, 255, 0.3)',
+                  borderRadius: '6px',
+                  textAlign: 'center'
+                }}>
+                  <div style={{
+                    width: '32px',
+                    height: '32px',
+                    background: 'var(--accent-blue)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 12px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    color: 'var(--bg-primary)'
+                  }}>3</div>
+                  <p style={{ fontSize: '12px', color: 'var(--text-secondary)', margin: 0 }}>
+                    {t.realTime.flowStep3}
+                  </p>
+                </div>
+
+                {/* Step 4 */}
+                <div style={{
+                  padding: '16px',
+                  background: 'rgba(46, 213, 115, 0.1)',
+                  border: '1px solid rgba(46, 213, 115, 0.3)',
+                  borderRadius: '6px',
+                  textAlign: 'center'
+                }}>
+                  <div style={{
+                    width: '32px',
+                    height: '32px',
+                    background: 'var(--accent-green)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 12px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    color: 'var(--bg-primary)'
+                  }}>4</div>
+                  <p style={{ fontSize: '12px', color: 'var(--text-secondary)', margin: 0 }}>
+                    {t.realTime.flowStep4}
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
